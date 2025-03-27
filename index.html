@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work in Progress</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            animation: nocturn-effect 5s infinite alternate;
+            position: relative;
+        }
+
+        @keyframes nocturn-effect {
+            0% { background-color: #f0f0f0; }
+            50% { background-color: #1c1c1c; }
+            100% { background-color: #f0f0f0; }
+        }
+
+        h1, footer {
+            position: relative;
+            z-index: 2;
+            color: #555;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Cursor Invert Circle */
+        .cursor-invert {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            transition: background 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Work in Progress</h1>
+    <footer>Copyright © 2025, NocturnOS. All rights reserved.</footer>
+
+    <div class="cursor-invert"></div>
+
+    <script>
+        const cursor = document.querySelector('.cursor-invert');
+        document.addEventListener('mousemove', e => {
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.left = e.clientX + 'px';
+        });
+    </script>
+</body>
+
+</html>
